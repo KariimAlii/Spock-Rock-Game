@@ -1,0 +1,11 @@
+@use "../variables" as *;
+@media screen and ($tablet-size) {
+    html {
+        font-size: 8px;
+    }
+}
+@media screen and ($mobile-size) {
+    html {
+        font-size: 6px;
+    }
+}

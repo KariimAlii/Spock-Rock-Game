@@ -1,3 +1,4 @@
+@use "../variables" as *;
 @import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
 
 %centeredFlexBox {
@@ -13,10 +14,14 @@ html {
     margin:0;
     padding: 0;
     font-family: Lato, sans-serif;
-    border:1px solid red;
 }
 body {
     @extend %centeredFlexBox;
     margin:0;
     min-height: 100vh;
+
+    background-color: $secondary-background-color;
+    background-image:  repeating-linear-gradient(45deg, $background-color 25%, transparent 25%, transparent 75%, $background-color 75%, $background-color), repeating-linear-gradient(45deg, $background-color 25%, $secondary-background-color 25%, $secondary-background-color 75%, $background-color 75%, $background-color);
+    background-position: 0 0, 40px 40px;
+    background-size: 80px 80px;
 }

@@ -1,0 +1,78 @@
+@use "../layout/global-rules";
+@use "../variables" as *;
+// @extend %centeredFlexBox;
+.game-container {
+    background-color: #fff;
+    padding: 2rem;
+    box-shadow:0 2rem 2.5rem #222;
+    border-radius: 1rem;
+    .header {
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            color:#fff;
+            background-color: $background-color;
+            padding: 2rem;
+            border-radius: 1rem;
+            text-shadow: 0.2rem 0.2rem 0.5rem #222;
+        }
+    }
+    .player-container {
+        padding: 2rem;
+        h2 {
+            margin:2rem 0;
+            font-size: 2rem;
+        }
+        .choiceIconsContainer {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            .choiceIcon {
+                font-size: 7rem;
+                user-select:none; // the user can't select it
+            }
+        }
+        &#player {
+            .choiceIcon , .choice {
+                &:hover {
+                    cursor: pointer;
+                }
+                color:dodgerblue;
+            }
+        }
+        &#computer {
+            .choiceIcon , .choice {
+                color:rgb(235,43,52);
+            }
+        }
+    }    
+    .reset-icon {
+        margin-top:2rem;
+        padding: 2rem;
+        font: {
+            size:3rem;
+            weight:700;
+        }
+        &:hover {
+            cursor: pointer;
+        }
+        &:active {
+            transform: rotate(360deg);
+            transition: all 0.3s;
+        }
+        transition: all 1s;
+    }
+    .class-container {
+        @extend %centeredFlexBox;
+        padding: 2rem;
+        .result-text {
+            font: {
+                size:3rem;
+                weight:700;
+            }
+        }
+    }
+}
+.selected {
+    color:#000 !important;
+}
