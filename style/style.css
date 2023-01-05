@@ -40,30 +40,33 @@ body {
   border-radius: 1rem;
   text-shadow: 0.2rem 0.2rem 0.5rem #222;
 }
-.game-container .player-container {
+.game-container .play-container {
   padding: 2rem;
 }
-.game-container .player-container h2 {
+.game-container .play-container h2 {
   margin: 2rem 0;
   font-size: 2rem;
 }
-.game-container .player-container .choiceIconsContainer {
+.game-container .play-container .choiceIconsContainer {
   width: 100%;
   display: flex;
   justify-content: space-between;
 }
-.game-container .player-container .choiceIconsContainer .choiceIcon {
+.game-container .play-container .choiceIconsContainer .choiceIcon {
   font-size: 7rem;
   user-select: none;
 }
-.game-container .player-container#player .choiceIcon, .game-container .player-container#player .choice {
+.game-container .play-container#player .choiceIcon, .game-container .play-container#player .choice {
   color: dodgerblue;
 }
-.game-container .player-container#player .choiceIcon:hover, .game-container .player-container#player .choice:hover {
+.game-container .play-container#player .choiceIcon:hover, .game-container .play-container#player .choice:hover {
   cursor: pointer;
 }
-.game-container .player-container#computer .choiceIcon, .game-container .player-container#computer .choice {
+.game-container .play-container#computer .choiceIcon, .game-container .play-container#computer .choice {
   color: rgb(235, 43, 52);
+}
+.game-container .play-container#computer .choiceIcon:hover, .game-container .play-container#computer .choice:hover {
+  cursor: crosshair;
 }
 .game-container .reset-icon {
   margin-top: 2rem;
@@ -89,6 +92,14 @@ body {
 
 .selected {
   color: #000 !important;
+}
+
+.win {
+  color: green;
+}
+
+.lose {
+  color: red;
 }
 
 @media screen and (max-width:767px) {

@@ -17,7 +17,7 @@
             text-shadow: 0.2rem 0.2rem 0.5rem #222;
         }
     }
-    .player-container {
+    .play-container {
         padding: 2rem;
         h2 {
             margin:2rem 0;
@@ -42,6 +42,9 @@
         }
         &#computer {
             .choiceIcon , .choice {
+                &:hover {
+                    cursor:crosshair; // or you can use (default)
+                }
                 color:rgb(235,43,52);
             }
         }
@@ -75,4 +78,10 @@
 }
 .selected {
     color:#000 !important;
+}
+.win {
+    color:green;
+}
+.lose {
+    color:red;
 }
