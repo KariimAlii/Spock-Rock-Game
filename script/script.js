@@ -56,13 +56,15 @@ function computerSelect() {
 function winOrLose(playerChoice) {
     for (let i = 0; i < choices.length; i++) {
         if (choices[i].name === playerChoice) {
-            if (choices[i].defeats.includes(computerChoice)) {
+            if (choices[i].defeats.includes(computerChoice)) { // win
                 const newScore = parseInt(playerScoreEl.textContent) + 1;
                 playerScoreEl.textContent = newScore;
                 resultText.textContent = "You Won!";
                 resultText.classList.remove("lose");
                 resultText.classList.add("win");
-            } else {
+                startConfetti();
+            } else { // lose
+                stopConfetti();
                 const newScore = parseInt(computerScoreEl.textContent) + 1;
                 computerScoreEl.textContent = newScore;
                 resultText.textContent = "You Lose!";
@@ -96,4 +98,5 @@ resetIcon.addEventListener("click", () => {
     resetScores();
     resetChoice();
     resetResult();
+    stopConfetti();
 });
