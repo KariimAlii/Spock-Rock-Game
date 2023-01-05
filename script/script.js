@@ -56,19 +56,27 @@ function computerSelect() {
 function winOrLose(playerChoice) {
     for (let i = 0; i < choices.length; i++) {
         if (choices[i].name === playerChoice) {
-            if (choices[i].defeats.includes(computerChoice)) { // win
+            if (playerChoice === computerChoice) { // draw
+                stopConfetti();
+                resultText.textContent = "Draw!";
+                resultText.classList.remove("lose");
+                resultText.classList.remove("win");
+                resultText.classList.add("draw");
+            } else if (choices[i].defeats.includes(computerChoice)) { // win
                 const newScore = parseInt(playerScoreEl.textContent) + 1;
                 playerScoreEl.textContent = newScore;
                 resultText.textContent = "You Won!";
                 resultText.classList.remove("lose");
+                resultText.classList.remove("draw");
                 resultText.classList.add("win");
                 startConfetti();
-            } else { // lose
+            }   else { // lose
                 stopConfetti();
                 const newScore = parseInt(computerScoreEl.textContent) + 1;
                 computerScoreEl.textContent = newScore;
                 resultText.textContent = "You Lose!";
                 resultText.classList.remove("win");
+                resultText.classList.remove("draw");
                 resultText.classList.add("lose");
             }
             break;
